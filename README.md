@@ -109,19 +109,20 @@ Timeline:
     [x] Artist schema
     [x] Performance schema 
     [x] Booking schema 
-[ ] Creating the artist routes
-    [ ] GET api/artists
-    [ ] GET api/artists/:artistId
-    [ ] POST api/artists
-[ ] Creating the user routes
-    [ ] GET api/user/:userId
-[ ] Creating the performance routes
-    [ ] GET api/performances
-    [ ] GET api/performances/:performanceId
-    [ ] GET api/performances/:performanceId/:artistId
-    [ ] POST api/performances
-    [ ] PUT api/performances/:performanceId
-    [ ] DELETE api/performances/:performanceId
+[x] Creating the artist routes
+    [x] GET api/artists
+    [x] GET api/artists/:artistId
+    [ ] GET api/artists/:artistId/performances
+    [x] POST api/artists
+[x] Creating the user routes
+    [x] GET api/user/:userId
+[x] Creating the performance routes
+    [x] GET api/performances
+    [x] GET api/performances/:performanceId
+    [x] POST api/performances
+    [x] PUT api/performances/:performanceId
+    [x] DELETE api/performances/:performanceId
+[ ] Creating the booking route
 [ ] Test with Postman
 
 ### Milestone 3

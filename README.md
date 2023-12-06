@@ -31,7 +31,7 @@ Models:
   - password:
   - location:
     - address:
-    - type of location: 
+    - type of location:  --> model
     - space (square meters):
     - performance ready?: boolean
   - reviews from artists who performed for this user previously (protected; only artists can see this) [array of strings]]
@@ -94,20 +94,21 @@ Timeline:
 ## Milestones
 
 ### Milestone 1
-[ ] Initial project setup on GitHub
-    [ ] Creating our backend using ironlauncher
+[x] Initial project setup on GitHub
+    [x] Creating our backend using ironlauncher
         npx  --yes  ironlauncher@latest  our-cool-project-backend   --auth   --json
-    [ ] Creating our frontend using vite
+    [x] Creating our frontend using vite
         npm  --yes  create  vite@latest  our-cool-project-frontend -- --template react
-    [ ] Uploading to github
-    [ ] Use mongoose to connect to database
-    [ ] Implement CORS
+    [x] Uploading to github
+    [x] Use mongoose to connect to database
+    [x] Implement CORS
 
 ### Milestone 2 
-[ ] Creating the schemas/models on backend 
-    [ ] User schema
-    [ ] Artist schema
-    [ ] Performance schema 
+[x] Creating the schemas/models on backend 
+    [x] User schema
+    [x] Artist schema
+    [x] Performance schema 
+    [x] Booking schema 
 [ ] Creating the artist routes
     [ ] GET api/artists
     [ ] GET api/artists/:artistId

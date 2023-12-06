@@ -1,16 +1,17 @@
+const mongoose = require("mongoose")
 const { Schema, model } = require("mongoose");
 
 const bookingSchema = new Schema({
   artistRef: {
-    types: Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Artist",
   },
   performanceRef: {
-    types: Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "Performance",
   },
   userRef: {
-    types: Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User",
   },
   location: {

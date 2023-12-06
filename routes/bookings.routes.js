@@ -16,17 +16,17 @@ router.get("/api/bookings", (req, res, next) => {
     });
 });
 
-// CREATE a booking
+// POST a booking
 router.post("/api/bookings", (req, res, next) => {
   Booking.create({
     artistRef: req.body.artistRef,
     performanceRef: req.body.performanceRef,
     userRef: req.body.userRef,
     location: {
-      address: req.body.address,
-      typeOfLocation: req.body.typeOfLocation,
-      indoor: req.body.indoor,
-      outdoor: req.body.outdoor,
+      address: req.body.location.address,
+      typeOfLocation: req.body.location.typeOfLocation,
+      indoor: req.body.location.indoor,
+      outdoor: req.body.location.outdoor,
     },
   })
 

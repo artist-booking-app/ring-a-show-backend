@@ -36,8 +36,8 @@ router.post("/api/artists", (req, res, next) => {
         cityLocation: req.body.cityLocation,
         performancesAvailable: req.body.performancesAvailable,
         about: {
-            biography: req.body.biography,
-            showreel: req.body.showreel
+            biography: req.body.about.biography,
+            showreel: req.body.about.showreel
          },
         imagePath: req.body.imagePath
     })

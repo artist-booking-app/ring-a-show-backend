@@ -112,7 +112,6 @@ Timeline:
 [x] Creating the artist routes
     [x] GET api/artists
     [x] GET api/artists/:artistId
-    [ ] GET api/artists/:artistId/performances
     [x] POST api/artists
 [x] Creating the user routes
     [x] GET api/user/:userId
@@ -122,18 +121,18 @@ Timeline:
     [x] POST api/performances
     [x] PUT api/performances/:performanceId
     [x] DELETE api/performances/:performanceId
-[ ] Creating the booking route
-[ ] Test with Postman
+[x] Creating the booking route
+[x] Test with Postman
 
 ### Milestone 3
-[ ] Authentication routes
-    [ ] POST auth/signup
-    [ ] POST auth/login
-    [ ] GET auth/verify
-[ ] If not already present: Error handling and other relevant middleware
-[ ] Validation middleware
-[ ] Establish protected routes (isAuthenticated)
-[ ] Test with Postman
+[x] Authentication routes
+    [x] POST auth/signup
+    [x] POST auth/login
+    [x] GET auth/verify
+[x] If not already present: Error handling and other relevant middleware
+[x] Validation middleware
+[x] Establish protected routes (isAuthenticated)
+[x] Test with Postman
 
 ### Milestone 4
 [ ] Browser Router import

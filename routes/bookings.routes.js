@@ -5,8 +5,9 @@ const Booking = require("./../models/Booking.model");
 const Performance = require("./../models/Performance.model");
 const User = require("./../models/User.model");
 
+const { isAuthenticated } = require("../middleware/jwt.middleware");
 // GET list of bookings
-router.get("/api/bookings", (req, res, next) => {
+router.get("/api/bookings",isAuthenticated, (req, res, next) => {
   Booking.find()
     .then((bookingsArr) => {
       res.status(200).json(bookingsArr);

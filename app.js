@@ -7,17 +7,14 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
+// const { isAuthenticated } = require("./middleware/jwt.middleware");
+
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require("dotenv").config();
 
 // ℹ️ Connects to the database
 require("./db");
-
-mongoose
-  .connect("mongodb://127.0.0.1:27017/ring-a-show-backend")
-  .then(x => console.log(`Connected to Database: "${x.connections[0].name}"`))
-  .catch(err => console.error("Error connecting to MongoDB", err));
 
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express

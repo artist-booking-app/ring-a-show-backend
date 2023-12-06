@@ -25,20 +25,20 @@ router.get("/api/users/:userId", (req, res, next) => {
     })
 })
 
-router.post("/api/users", (req, res, next) => {
-    User.create({
-        email: req.body.email,
-        password: req.body.password,
-        userName: req.body.userName,
-        isArtist: req.body.isArtist
-    })
-    .then((createdUser) => {
-        res.status(201).json(createdUser)
-    })
-    .catch((error) => {
-        next(error)
-    })
-})
+// router.post("/api/users", (req, res, next) => {
+//     User.create({
+//         email: req.body.email,
+//         password: req.body.password,
+//         userName: req.body.userName,
+//         isArtist: req.body.isArtist
+//     })
+//     .then((createdUser) => {
+//         res.status(201).json(createdUser)
+//     })
+//     .catch((error) => {
+//         next(error)
+//     })
+// })
 
 
 module.exports = router;

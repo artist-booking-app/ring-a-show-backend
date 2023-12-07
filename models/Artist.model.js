@@ -20,7 +20,7 @@ const artistSchema = new Schema({
     required: true,
   },
   performancesAvailable: {
-    type: Number,
+    type: Schema.Types.ObjectId,
     required: true
   },
   about: {

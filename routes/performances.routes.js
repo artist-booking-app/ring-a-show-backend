@@ -8,6 +8,7 @@ const User = require("./../models/User.model");
 // GET list of performances
 router.get("/api/performances", (req, res, next) => {
     Performance.find()
+    .populate("artistRef")
     .then((performances) => {
         res.status(200).json(performances)
     })

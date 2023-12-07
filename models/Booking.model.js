@@ -27,11 +27,7 @@ const bookingSchema = new Schema({
     indoor: {
       type: Boolean,
       required: true,
-    },
-    outdoor: {
-      type: Boolean,
-      required: true,
-      default: false
+      default: true
     }
   }
 });

@@ -8,7 +8,7 @@ const artistSchema = new Schema({
   },
   typeOfPerformance: {
     type: [String],
-    enum: ["Music", "Improv", "Dance", "Theatre"],
+    enum: ["Music", "Comedy", "Dance", "Theatre", "Magic", "Circus", "Multidisciplinary", "Performance Art"],
     required: true,
   },
   genre: {
@@ -20,8 +20,8 @@ const artistSchema = new Schema({
     required: true,
   },
   performancesAvailable: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Performance",
+    type: Number,
+    required: true
   },
   about: {
     biography: {

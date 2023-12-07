@@ -16,7 +16,7 @@ const performanceSchema = new Schema({
   },
   typeOfPerformance: {
     type: [String],
-    enum: ["Music", "Improv", "Dance", "Theatre"],
+    enum: ["Music", "Comedy", "Dance", "Theatre", "Magic", "Circus", "Multidisciplinary", "Performance Art"],
     required: true,
   },
   fee: {

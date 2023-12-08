@@ -21,7 +21,8 @@ const artistSchema = new Schema({
   },
   performancesAvailable: {
     type: Schema.Types.ObjectId,
-    required: true
+    required: true,
+    ref: "Performance"
   },
   about: {
     biography: {

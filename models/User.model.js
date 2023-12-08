@@ -21,6 +21,16 @@ const userSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  bookingReference: {
+    type: Schema.Types.ObjectId,
+    required: false,
+    ref: "Booking"
+  },
+  favouritesArtists: {
+    type: Schema.Types.ObjectId,
+    required: false,
+    ref: "Artist"
+  }
 });
 
 const User = model("User", userSchema);

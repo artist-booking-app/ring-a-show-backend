@@ -17,6 +17,8 @@ router.get("/api/users", (req, res, next) => {
 
 router.get("/api/users/:userId", (req, res, next) => {
     User.findById(req.params.userId)
+    .populate("bookingReference")
+    .populate("favouritesArtists")
     .then((user) => {
         res.status(200).json(user)
     })

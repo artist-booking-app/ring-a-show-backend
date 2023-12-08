@@ -8,6 +8,7 @@ const User = require("./../models/User.model");
 // GET list of artists
 router.get("/api/artists", (req, res, next) => {
     Artist.find()
+    .populate("performancesAvailable")
     .then((artists) => {
         res.status(200).json(artists)
     })
@@ -19,6 +20,7 @@ router.get("/api/artists", (req, res, next) => {
 // GET specific artist
 router.get("/api/artists/:artistId", (req, res, next) => {
     Artist.findById(req.params.artistId)
+    .populate("performancesAvailable")
     .then((artist) => {
         res.status(200).json(artist)
     })

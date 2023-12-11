@@ -6,9 +6,17 @@ const bookingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Artist",
   },
+  artistName: {
+    type: String,
+    required: true
+  },
   performanceRef: {
     type: Schema.Types.ObjectId,
     ref: "Performance",
+  },
+  performanceName: {
+    type: String,
+    required: true
   },
   userRef: {
     type: Schema.Types.ObjectId,

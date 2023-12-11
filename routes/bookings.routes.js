@@ -47,7 +47,9 @@ router.get("/api/bookings/:bookingId", (req, res, next) => {
 router.post("/api/bookings", (req, res, next) => {
   Booking.create({
     artistRef: req.body.artistRef,
+    artistName: req.body.artistName,
     performanceRef: req.body.performanceRef,
+    performanceName: req.body.performanceName,
     userRef: req.body.userRef,
     date: req.body.date,
     location: {

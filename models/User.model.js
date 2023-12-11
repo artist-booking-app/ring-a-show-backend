@@ -22,12 +22,12 @@ const userSchema = new Schema({
     default: false,
   },
   bookingReference: {
-    type: Schema.Types.ObjectId,
+    type: [Schema.Types.ObjectId],
     required: false,
     ref: "Booking"
   },
   favouritesArtists: {
-    type: Schema.Types.ObjectId,
+    type: [Schema.Types.ObjectId],
     required: false,
     ref: "Artist"
   }

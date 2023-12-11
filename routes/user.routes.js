@@ -27,6 +27,26 @@ router.get("/api/users/:userId", (req, res, next) => {
     })
 })
 
+router.put("/api/users/:userId", (req, res, next) => {
+    User.findByIdAndUpdate(req.params.userId, req.body, {new: true})
+    .then((updatedUser) => {
+        res.status(200).json(updatedUser);
+      })
+      .catch((error) => {
+        next(error);
+      })
+  })
+  
+router.delete("/api/users/:userId", (req, res, next) => {
+    User.findByIdAndDelete(req.params.userId)
+      .then(() => {
+        res.status(204).send();
+      })
+      .catch((error) => {
+        next(error);
+      })
+  })
+
 // router.post("/api/users", (req, res, next) => {
 //     User.create({
 //         email: req.body.email,

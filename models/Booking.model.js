@@ -14,6 +14,10 @@ const bookingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  date: {
+    type: Date,
+    required: true
+  },
   location: {
     address: {
       type: String,

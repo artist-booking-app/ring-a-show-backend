@@ -7,15 +7,41 @@ const User = require("./../models/User.model");
 
 const { isAuthenticated } = require("../middleware/jwt.middleware");
 // GET list of bookings
-router.get("/api/bookings",isAuthenticated, (req, res, next) => {
+router.get("/api/bookings", (req, res, next) => {
   Booking.find()
+  .populate("userRef")
+  .populate("performanceRef")
+  .populate("artistRef")
     .then((bookingsArr) => {
+      console.log(bookingsArr)
       res.status(200).json(bookingsArr);
     })
     .catch((error) => {
       next(error);
     });
 });
+
+//GET one booking
+router.get("/api/bookings/:bookingId", (req, res, next) => {
+  const bookingId = req.params.bookingId;
+
+  // Now you can use the bookingId to find the specific booking
+  Booking.findById(bookingId)
+    .populate("userRef")
+    .populate("performanceRef")
+    .populate("artistRef")
+    .then((booking) => {
+      if (!booking) {
+        return res.status(404).json({ message: "Booking not found" });
+      }
+
+      res.status(200).json(booking);
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
 
 // POST a booking
 router.post("/api/bookings", (req, res, next) => {

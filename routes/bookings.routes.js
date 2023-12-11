@@ -49,6 +49,7 @@ router.post("/api/bookings", (req, res, next) => {
     artistRef: req.body.artistRef,
     performanceRef: req.body.performanceRef,
     userRef: req.body.userRef,
+    date: req.body.date,
     location: {
       address: req.body.location.address,
       typeOfLocation: req.body.location.typeOfLocation,

@@ -52,7 +52,7 @@ router.post("/api/artists", (req, res, next) => {
 router.put("/api/artists/:artistId", (req, res, next) => {
     Artist.findByIdAndUpdate(req.params.artistId, req.body, {new: true})
     .then((updatedArtist) => {
-        res.status(200).json(updatedUser)
+        res.status(200).json(updatedArtist)
     })
     .catch((error) => {
         next(error)

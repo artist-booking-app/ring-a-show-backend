@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const { isAuthenticated } = require("./middleware/jwt.middleware");
+// const { isAuthenticated } = require("./middleware/jwt.middleware");
 
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv

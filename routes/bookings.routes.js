@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Artist = require("./../models/Artist.model");
 const Booking = require("./../models/Booking.model");
-const Performance = require("./../models/Performance.model");
-const User = require("./../models/User.model");
 
 const { isAuthenticated } = require("../middleware/jwt.middleware");
+
 // GET list of bookings
 router.get("/api/bookings", (req, res, next) => {
   Booking.find()
@@ -68,6 +66,28 @@ router.post("/api/bookings", (req, res, next) => {
     });
 });
 
-module.exports = router;
+// PUT specific booking
+router.put("/api/bookings/:bookingId", (req, res, next) => {
+  Booking.findByIdAndUpdate(req.params.bookingId, req.body, {new: true})
+  .then((updatedBooking) => {
+    res.status(200).json(updatedBooking)
+  })
+  .catch((error) => {
+    next(error)
+  })
+})
+
+// DELETE specific booking
+router.delete("/api/bookings/:bookingId", (req, res, next) => {
+  Booking.findByIdAndDelete(req.params.bookingId)
+  .then(() => {
+    res.status(204).send()
+  })
+  .catch((error) => {
+    next(error)
+  })
+})
+
+
 
 module.exports = router;

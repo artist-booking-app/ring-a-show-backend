@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Artist = require("./../models/Artist.model");
-const Booking = require("./../models/Booking.model");
-const Performance = require("./../models/Performance.model");
-const User = require("./../models/User.model");
 
 // GET list of artists
 router.get("/api/artists", (req, res, next) => {
@@ -45,6 +42,28 @@ router.post("/api/artists", (req, res, next) => {
     })
     .then((createdArtist) => {
         res.status(201).json(createdArtist)
+    })
+    .catch((error) => {
+        next(error)
+    })
+})
+
+// PUT specific artist
+router.put("/api/artists/:artistId", (req, res, next) => {
+    Artist.findByIdAndUpdate(req.params.artistId, req.body, {new: true})
+    .then((updatedArtist) => {
+        res.status(200).json(updatedUser)
+    })
+    .catch((error) => {
+        next(error)
+    })
+})
+
+// DELETE specific artist
+router.delete("/api/artists/:artistId", (req, res, next) => {
+    Artist.findByIdAndDelete(req.params.artistId)
+    .then(() => {
+        res.status(204).send()
     })
     .catch((error) => {
         next(error)

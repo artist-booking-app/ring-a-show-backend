@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Artist = require("../models/Artist.model");
-const Booking = require("../models/Booking.model");
-const Performance = require("../models/Performance.model");
 const User = require("../models/User.model");
 
+
+// GET list of users
 router.get("/api/users", (req, res, next) => {
     User.find()
     .then((users) => {
@@ -15,6 +14,7 @@ router.get("/api/users", (req, res, next) => {
     })
 })
 
+// GET specific user
 router.get("/api/users/:userId", (req, res, next) => {
     User.findById(req.params.userId)
     .populate("bookingReference")
@@ -27,6 +27,7 @@ router.get("/api/users/:userId", (req, res, next) => {
     })
 })
 
+// PUT specific user
 router.put("/api/users/:userId", (req, res, next) => {
     User.findByIdAndUpdate(req.params.userId, req.body, {new: true})
     .then((updatedUser) => {
@@ -36,7 +37,8 @@ router.put("/api/users/:userId", (req, res, next) => {
         next(error);
       })
   })
-  
+
+// DELETE specific user
 router.delete("/api/users/:userId", (req, res, next) => {
     User.findByIdAndDelete(req.params.userId)
       .then(() => {
@@ -46,21 +48,6 @@ router.delete("/api/users/:userId", (req, res, next) => {
         next(error);
       })
   })
-
-// router.post("/api/users", (req, res, next) => {
-//     User.create({
-//         email: req.body.email,
-//         password: req.body.password,
-//         userName: req.body.userName,
-//         isArtist: req.body.isArtist
-//     })
-//     .then((createdUser) => {
-//         res.status(201).json(createdUser)
-//     })
-//     .catch((error) => {
-//         next(error)
-//     })
-// })
 
 
 module.exports = router;

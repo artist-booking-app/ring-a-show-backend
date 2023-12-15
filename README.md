@@ -1,4 +1,46 @@
-Project 3 - MERN Stack App
+# RingAShow
+
+## About
+
+An app that allows you to book artists for small gigs at home or at a specified location. The app is easy to use and works similar to a food delivery app. Just browse through our list of artists and their performances and click "Book Now" to book that artist.
+
+Features include:
+- Filters to specify what type of performance and the city you are located in
+- Profile page to store all your relevant bookings
+- Bookings can be edited or cancelled if needed
+- The ability to create and edit artists and performances (only available if you have an artist profile)
+
+## Steps to run the app locally (backend)
+
+1. Fork this repo and clone it
+2. Navigate to this directory and run the following codes:
+    ```bash 
+    npm install 
+    code -r .
+    ```
+3. Once opened, install the following dependencies:
+    ```bash
+    npm install bcryptjs jsonwebtoken express-jwt
+    ```
+4. Create a .env file in the root/directory folder
+5. Create a variable called VITE_API_URL and store this link:
+    ```bash
+    PORT=5005
+    ORIGIN=http://localhost:XXXX 
+    TOKEN_SECRET=y0uRt0k3N$eCr3T
+    ```
+    PORT - This specifes which port you want to run your backend on
+    ORIGIN - This specifies which port you are running your frontend on 
+    TOKEN_SECRET - This verifies any authentication tokens
+
+4. Once all the previous steps have been completed, type this code to enable the app to run locally on your browser:
+    ```bash
+    npm run dev
+    ```
+
+## Demo 
+
+https://ring-a-show.netlify.app/
 
 Brainstorm:
 - Possible ideas:
@@ -24,7 +66,7 @@ MVP:
   - Set up a mutual agreement (both parties agree to the performance)
 
 Models:
-- User model --> CR 
+- User model --> CRU 
   - name:
   - last name:
   - email:
@@ -34,9 +76,9 @@ Models:
     - type of location:  --> model
     - space (square meters):
     - performance ready?: boolean
-  - reviews from artists who performed for this user previously (protected; only artists can see this) [array of strings]]
+  - reviews from artists who performed for this user previously (protected; only artists can see this) [array of strings]
 
-- Artist model: - CR
+- Artist model: - CRU
   - artist name: String
   - type of performance: [enum, array]
   - genre (if applicable):
@@ -55,6 +97,16 @@ Models:
   - artist model:
   - reviews:
   - fee: [enum, range]
+
+- Booking model: - CRUD
+  - Artist reference
+  - Performance reference
+  - User reference
+  - date
+  - location:
+    - address
+    - type of location: private or commercial
+    - indoor or outdoor
 
 App pages:
 - Home page:
@@ -135,52 +187,63 @@ Timeline:
 [x] Test with Postman
 
 ### Milestone 4
-[ ] Browser Router import
-    [ ] Wrap around <App /> component on main.jsx
-[ ] Create a .env file and include backend URL
-[ ] Create routes for the different pages
-    [ ] /homepage
-    [ ] /artistpage
-    [ ] /performancepage
-    [ ] /userpage
-    [ ] /login
-    [ ] /signup
+[x] Browser Router import
+    [x] Wrap around <App /> component on main.jsx
+[x] Create a .env file and include backend URL
+[x] Create routes for the different pages
+    [x] /homepage
+    [x] /artistpage
+    [x] /performancepage
+    [x] /userpage
+    [x] /login
+    [x] /signup
 
 ### Milestone 5
-[ ] Homepage
-    [ ] GET request for list of artists
-    [ ] Component for a pop-up banner that asks your preference in the beginning 
-[ ] Artist page
-    [ ] GET request display artist details
-[ ] Performance page
-    [ ] GET request to display performance details
-    [ ] GET request to display artist details (small link/small bit of information)
-    [ ] Component to book the specific performance 
-[ ] Edit/delete performance page
-    [ ] PUT and Delete Request
-[ ] User page 
-    [ ] GET request to display user dtails
-[ ] Favourites page
-    [ ] TBD
-[ ] Sign up page
-    [ ] Creating a form to input information
-    [ ] POST Request
-[ ] Log in page
-    [ ] Creating a form to input information
-    [ ] POST Request 
+[x] Homepage
+    [x] Component for a pop-up banner that asks your preference in the beginning 
+[x] Artist page
+    [x] GET request to display list of artists
+    [x] Added "Add to Favourites" button
+[x] Artist Details Page
+    [x] GET request to display artist details
+[x] Artist Create Page
+    [x] POST request to create new artist    
+[x] Performance page
+    [x] GET request to display performance details
+    [x] GET request to display artist details (small link/small bit of information)
+[x] Edit/delete performance page
+    [x] PUT and DELETE Request
+[x] User page 
+    [x] GET request to display user details
+    [x] Booking details
+    [x] Favourites component
+[x] Favourites page
+[x] Sign up page
+    [x] Creating a form to input information
+    [x] POST Request
+[x] Log in page
+    [x] Creating a form to input information
+    [x] POST Request
 
 ### Milestone 6
-[ ] Implement navigational functionalities
-    [ ] Navbar (include access to homepage, user page, favourites page, sign up and login)
-    [ ] Footer
-[ ] Styling with CSS
-[ ] Responsive
+[x] Booking component 
+    [x] Create state variables for both performance and artists
+    [x] Object destructuring to obtain performanceId and artistId
+    [x] Create "book now" handler with a POST request to send booking to database
+    [x] Add information from the specific performance and artist to booking details
+    [x] Create form for address below booking details
+
+### Milestone 7
+[x] Implement navigational functionalities
+    [x] Navbar (include access to homepage, user page, favourites page, sign up and login)
+    [x] Footer
+[x] Styling with CSS
+[x] Responsive
 
 ## Bonuses
-[ ] Filters for homepage
+[x] Filters for homepage
 [ ] Reviews
 [ ] Suggestions/random pick
-[ ] Calendar in the booking component
 [ ] Map component - meeting points/suggestions for performance places
 
 ## Minor fixes

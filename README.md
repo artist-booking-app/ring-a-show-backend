@@ -42,6 +42,8 @@ Features include:
 
 https://ring-a-show.netlify.app/
 
+## Project Planning
+
 Brainstorm:
 - Possible ideas:
   1: Lifestyle/productivity tracker
